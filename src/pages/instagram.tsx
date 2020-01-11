@@ -67,20 +67,13 @@ const Item = styled(animated.a)`
   > div img {
     transition: all 0.3s ease 0s !important;
   }
-  &:hover {
-    ${Overlay} {
-      opacity: 1;
-    }
-
-    ${Bottom} {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    ${Title} {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  ${Bottom} {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  ${Title} {
+    transform: translateY(0);
+    opacity: 1;
   }
 `
 
