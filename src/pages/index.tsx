@@ -117,7 +117,6 @@ const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, three
         </AboutUs>
         <ThreeProjects>
           {threeProjects.nodes.map(project => {
-            console.log(project)
             return(
             <GridItem to={project.slug} key={project.slug} aria-label={`View project "${project.title}"`}>
               <Img fluid={project.cover.childImageSharp.fluid} />

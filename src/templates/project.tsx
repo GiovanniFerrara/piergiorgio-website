@@ -25,12 +25,6 @@ const Content = styled(Box)<{ bg: string }>`
   }
 `
 
-const Category = styled(AnimatedBox)`
-  letter-spacing: 0.05em;
-  font-size: ${props => props.theme.fontSizes[1]};
-  text-transform: uppercase;
-`
-
 const Description = styled(animated.div)`
   max-width: 960px;
   letter-spacing: -0.003em;

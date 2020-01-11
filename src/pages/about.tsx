@@ -28,7 +28,6 @@ const About = () => {
       }
     }`}
     render={data =>{
-      console.log(data)
       return (
     <Layout>
       <SEO title="About | Piergiorgio" desc="Contact me" />

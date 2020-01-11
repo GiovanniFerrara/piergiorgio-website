@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: `.env`,
+  path: '.env'
 })
 
 const config = require('./config')
@@ -20,7 +20,7 @@ module.exports = {
     ogLanguage: config.ogLanguage,
     author: config.author,
     twitter: config.userTwitter,
-    facebook: config.ogSiteName,
+    facebook: config.ogSiteName
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -31,35 +31,35 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'projects',
-        path: `${__dirname}/content/projects`,
-      },
+        path: `${__dirname}/content/projects`
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'config',
-        path: `${__dirname}/config`,
-      },
+        path: `${__dirname}/config`
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     {
       resolve: 'gatsby-source-instagram',
       options: {
-        access_token: process.env.ACCESS_TOKEN,
-        instagram_id: process.env.BUSINESS_ID,
-      },
+        username: process.env.USERNAME,
+        access_token: process.env.ACCESS_TOKEN
+      }
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: config.googleAnalyticsID,
-      },
+        trackingId: config.googleAnalyticsID
+      }
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -74,10 +74,10 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'standalone',
-        icon: 'src/favicon.png',
-      },
+        icon: 'src/favicon.png'
+      }
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-netlify',
-  ],
+    'gatsby-plugin-netlify'
+  ]
 }
