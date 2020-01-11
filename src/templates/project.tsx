@@ -85,12 +85,6 @@ type PageProps = {
 }
 
 const Project: React.FunctionComponent<PageProps> = ({ data: { project, images } }) => {
-  const categoryAnimation = useSpring({
-    config: config.slow,
-    from: { opacity: 0, transform: 'translate3d(0, -30px, 0)' },
-    to: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-  })
-
   const titleAnimation = useSpring({ config: config.slow, delay: 300, from: { opacity: 0 }, to: { opacity: 1 } })
   const descAnimation = useSpring({ config: config.slow, delay: 600, from: { opacity: 0 }, to: { opacity: 1 } })
   const imagesAnimation = useSpring({ config: config.slow, delay: 800, from: { opacity: 0 }, to: { opacity: 1 } })
@@ -105,8 +99,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
         banner={project.cover.childImageSharp.resize.src}
         individual
       />
-      <PBox py={10} px={[6, 6, 8, 10]}>
-        <Category style={categoryAnimation}>{project.category}</Category>
+      <PBox py={[1,10]} px={[6, 6, 8, 10]}>
         <animated.h1 style={titleAnimation}>{project.title_detail}</animated.h1>
         <Description style={descAnimation}>
           <div dangerouslySetInnerHTML={{ __html: project.desc }} />

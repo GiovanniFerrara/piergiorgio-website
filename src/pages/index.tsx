@@ -61,7 +61,7 @@ const Area = styled(animated.div)`
 
   @media (max-width: ${props => props.theme.breakpoints[0]}) {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 50vw);
+    grid-template-rows: repeat(6, 110vw);
 
     grid-template-areas:
       'first-project'
@@ -116,12 +116,14 @@ const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, three
           <span>About</span>
         </AboutUs>
         <ThreeProjects>
-          {threeProjects.nodes.map(project => (
+          {threeProjects.nodes.map(project => {
+            console.log(project)
+            return(
             <GridItem to={project.slug} key={project.slug} aria-label={`View project "${project.title}"`}>
               <Img fluid={project.cover.childImageSharp.fluid} />
               <span>{project.title}</span>
             </GridItem>
-          ))}
+          )})}
         </ThreeProjects>
         <Instagram to="/instagram" aria-label="See my Instagram pictures">
           <Img fluid={instagram.childImageSharp.fluid} />
